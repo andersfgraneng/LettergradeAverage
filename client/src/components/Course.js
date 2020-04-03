@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 
-const Course = () => {
+const Course = ({ courseName, grade }) => {
   return (
     <div className="item">
-      <div class="ui transparent input">
-        <input type="text" placeholder="Search..." />
+      <div className="ui right floated content">
+        <button className="ui icon button">
+          <i className="trash alternate outline icon" />
+        </button>
       </div>
-      <div class="ui input">
-        <input type="text" placeholder="Search..." />
+      <div className="content">
+        <div className="ui transparent input">
+          <input type="text" placeholder={courseName} />
+        </div>
+        <div className="ui input">
+          <input type="text" placeholder={grade} />
+        </div>
       </div>
     </div>
   );

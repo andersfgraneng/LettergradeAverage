@@ -9,11 +9,9 @@ const App = () => {
       <div>
         <h2>Grade calculator</h2>
       </div>
-      <div className="ui container">
-        <div className="ui grid">
-          <CourseList />
-          <Preview />
-        </div>
+      <div className="ui container grid">
+        <CourseList />
+        <Preview />
       </div>
     </div>
   );
