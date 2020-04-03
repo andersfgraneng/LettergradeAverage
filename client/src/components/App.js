@@ -1,14 +1,19 @@
 import React from 'react';
 
-import CourseList from 'components/CourseList';
-import Preview from 'components/Preview';
+import CourseList from './CourseList';
+import Preview from './Preview';
 
 const App = () => {
   return (
-    <div className="ui container">
-      <div className="ui grid">
-        <CourseList />
-        <Preview />
+    <div className="ui segment">
+      <div>
+        <h2>Grade calculator</h2>
+      </div>
+      <div className="ui container">
+        <div className="ui grid">
+          <CourseList />
+          <Preview />
+        </div>
       </div>
     </div>
   );

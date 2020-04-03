@@ -1,12 +1,14 @@
 import React from 'react';
 
-import Course from 'components/Course';
+import Course from './Course';
+import AddCourseCard from './AddCourseCard';
 
 const CourseList = () => {
   return (
     <div className="eight wide column">
       <Course />
       <Course />
+      <AddCourseCard />
     </div>
   );
 };
