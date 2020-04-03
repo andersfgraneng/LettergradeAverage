@@ -13,11 +13,8 @@ const AddCourseCard = onClickHandler => {
         onClick={() =>
           dispatch(
             addCourse({
-              type: 'ADD_COURSE',
-              payload: {
-                courseName: 'EX100',
-                grade: 'A'
-              }
+              courseName: 'EX100',
+              grade: 'A'
             })
           )
         }
