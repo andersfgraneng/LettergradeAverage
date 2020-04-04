@@ -1,15 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Course from './Course';
 import AddCourseCard from './AddCourseCard';
-import { addCourse } from './../actions';
 
 const CourseList = () => {
   const courses = useSelector(state => state.courses);
-  const dispatch = useDispatch();
-
-  const onClickHandler = () => {};
 
   const renderCourseList = () => {
     console.log(courses);
