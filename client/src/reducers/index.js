@@ -11,7 +11,9 @@ const coursesReducer = (
     case 'ADD_COURSE':
       return [...courses, action.payload];
     case 'DELETE_COURSE':
-      return;
+      return courses.filter(
+        course => course.courseName !== action.payload.courseName
+      );
     case 'UPDATE_COURSE':
       return courses.map(course => {
         if (course.courseName === action.payload.courseName) {

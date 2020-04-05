@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { updateCourse } from '../actions';
+import { updateCourse, deleteCourse } from '../actions';
 
 const Course = ({ courseName, grade }) => {
   const dispatch = useDispatch();
@@ -10,7 +10,10 @@ const Course = ({ courseName, grade }) => {
   return (
     <div className="item">
       <div className="ui right floated content">
-        <button className="ui red icon button">
+        <button
+          className="ui red icon button"
+          onClick={() => dispatch(deleteCourse({ courseName, grade }))}
+        >
           <i className="trash alternate outline icon" />
         </button>
       </div>
@@ -18,7 +21,7 @@ const Course = ({ courseName, grade }) => {
         <div>
           Course name:
           <div className="ui transparent input">
-            <input type="text" placeholder={courseName} />
+            <input type="text" value={courseName} readOnly="true" />
           </div>
         </div>
         <div>
