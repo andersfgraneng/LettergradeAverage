@@ -21,47 +21,45 @@ const AddCourseCard = onClickHandler => {
   };
 
   return (
-    <div className="item">
-      <div className="ui card">
-        <div className="content">
-          Course name:
-          <div className="ui transparent input">
-            <input
-              type="text"
-              value={newCourseName}
-              onChange={event => {
-                checkCourseName(event.target.value);
-              }}
-            />
-          </div>
-          Grade:
-          <div className="ui input">
-            <input
-              type="text"
-              value={newGrade}
-              maxLength="1"
-              onChange={event => {
-                setNewGrade(event.target.value);
-              }}
-            />
-          </div>
+    <div className="ui card">
+      <div className="content">
+        Course name:
+        <div className="ui transparent input">
+          <input
+            type="text"
+            value={newCourseName}
+            onChange={event => {
+              checkCourseName(event.target.value);
+            }}
+          />
         </div>
-        <button
-          className="ui primary bottom attached button"
-          disabled={disableButton}
-          onClick={() =>
-            dispatch(
-              addCourse({
-                courseName: 'EX100',
-                grade: 'A'
-              })
-            )
-          }
-        >
-          <i className="add icon"></i>
-          Add course
-        </button>
+        Grade:
+        <div className="ui input">
+          <input
+            type="text"
+            value={newGrade}
+            maxLength="1"
+            onChange={event => {
+              setNewGrade(event.target.value);
+            }}
+          />
+        </div>
       </div>
+      <button
+        className="ui primary bottom attached button"
+        disabled={disableButton}
+        onClick={() =>
+          dispatch(
+            addCourse({
+              courseName: newCourseName,
+              grade: newGrade
+            })
+          )
+        }
+      >
+        <i className="add icon"></i>
+        Add course
+      </button>
     </div>
   );
 };
