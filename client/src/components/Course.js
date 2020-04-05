@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { updateCourse } from '../actions';
 
 const Course = ({ courseName, grade }) => {
+  const dispatch = useDispatch();
+  const [newGrade, setNewGrade] = useState(grade);
+
   return (
     <div className="item">
       <div className="ui right floated content">
@@ -13,7 +19,15 @@ const Course = ({ courseName, grade }) => {
           <input type="text" placeholder={courseName} />
         </div>
         <div className="ui input">
-          <input type="text" placeholder={grade} />
+          <input
+            type="text"
+            placeholder={newGrade}
+            value={newGrade}
+            onChange={event => {
+              setNewGrade(event.target.value);
+              dispatch(updateCourse({ courseName, grade: event.target.value }));
+            }}
+          />
         </div>
       </div>
     </div>

@@ -10,6 +10,15 @@ const coursesReducer = (
   switch (action.type) {
     case 'ADD_COURSE':
       return [...courses, action.payload];
+    case 'DELETE_COURSE':
+      return;
+    case 'UPDATE_COURSE':
+      return courses.map(course => {
+        if (course.courseName === action.payload.courseName) {
+          return action.payload;
+        }
+        return course;
+      });
     default:
       return courses;
   }

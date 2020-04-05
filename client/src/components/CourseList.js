@@ -17,7 +17,7 @@ const CourseList = () => {
 
   return (
     <div className="eight wide column">
-      <div class="ui middle aligned divided list">{renderCourseList()}</div>
+      <div className="ui middle aligned divided list">{renderCourseList()}</div>
     </div>
   );
 };
