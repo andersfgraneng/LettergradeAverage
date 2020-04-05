@@ -10,7 +10,7 @@ const Course = ({ courseName, grade }) => {
   return (
     <div className="item">
       <div className="ui right floated content">
-        <button className="ui icon button">
+        <button className="ui red icon button">
           <i className="trash alternate outline icon" />
         </button>
       </div>
