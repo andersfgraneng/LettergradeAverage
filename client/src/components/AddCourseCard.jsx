@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addCourse } from './../actions';
+import { addCourse } from '../actions';
 
-const AddCourseCard = onClickHandler => {
+const AddCourseCard = (onClickHandler) => {
   const dispatch = useDispatch();
-  const courses = useSelector(state => state.courses);
+  const courses = useSelector((state) => state.courses);
 
   const [newCourseName, setNewCourseName] = useState('');
   const [newGrade, setNewGrade] = useState('');
   const [disableButton, setDisableButton] = useState(true);
 
-  const checkCourseName = string => {
+  const checkCourseName = (string) => {
     setNewCourseName(string);
-    if (courses.filter(course => course.courseName === string).length > 0) {
+    if (courses.filter((course) => course.courseName === string).length > 0) {
       setDisableButton(true);
     } else {
       setDisableButton(false);
@@ -28,7 +28,7 @@ const AddCourseCard = onClickHandler => {
           <input
             type="text"
             value={newCourseName}
-            onChange={event => {
+            onChange={(event) => {
               checkCourseName(event.target.value);
             }}
           />
@@ -39,7 +39,7 @@ const AddCourseCard = onClickHandler => {
             type="text"
             value={newGrade}
             maxLength="1"
-            onChange={event => {
+            onChange={(event) => {
               setNewGrade(event.target.value);
             }}
           />
@@ -52,7 +52,7 @@ const AddCourseCard = onClickHandler => {
           dispatch(
             addCourse({
               courseName: newCourseName,
-              grade: newGrade
+              grade: newGrade,
             })
           )
         }

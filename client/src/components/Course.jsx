@@ -9,7 +9,7 @@ const Course = ({ courseName, grade }) => {
 
   return (
     <div className="item">
-      <div className="ui right floated content">
+      <div className="ui left floated content">
         <button
           className="ui red icon button"
           onClick={() => dispatch(deleteCourse({ courseName, grade }))}
@@ -31,7 +31,8 @@ const Course = ({ courseName, grade }) => {
               type="text"
               placeholder={newGrade}
               value={newGrade}
-              onChange={event => {
+              maxLength="1"
+              onChange={(event) => {
                 setNewGrade(event.target.value);
                 dispatch(
                   updateCourse({ courseName, grade: event.target.value })

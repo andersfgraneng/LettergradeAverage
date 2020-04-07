@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Preview = () => {
-  const courses = useSelector(state => state.courses);
+  const courses = useSelector((state) => state.courses);
 
-  const determineValue = string => {
+  const determineValue = (string) => {
     switch (string.toUpperCase()) {
       case 'A':
         return 5;
@@ -24,9 +24,8 @@ const Preview = () => {
   const calculateAverage = () => {
     let sum = 0;
     let divider = 0;
-    courses.forEach(course => {
+    courses.forEach((course) => {
       const value = determineValue(course.grade);
-      console.log(value);
       if (value !== null) {
         sum += value;
         divider++;
@@ -36,7 +35,7 @@ const Preview = () => {
   };
 
   const printCourses = () => {
-    return courses.map(course => {
+    return courses.map((course) => {
       return (
         <div>
           <div>{course.courseName}</div>
@@ -44,14 +43,6 @@ const Preview = () => {
         </div>
       );
     });
-  };
-
-  const printAverage = () => {
-    return (
-      <div>
-        <div>{calculateAverage()}</div>
-      </div>
-    );
   };
 
   return (

@@ -5,10 +5,8 @@ import Preview from './Preview';
 
 const App = () => {
   return (
-    <div className="ui segment">
-      <div>
-        <h2>Grade calculator</h2>
-      </div>
+    <div className="ui">
+      <br />
       <div className="ui container grid">
         <CourseList />
         <Preview />

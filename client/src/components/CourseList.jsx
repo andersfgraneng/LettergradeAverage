@@ -5,7 +5,7 @@ import Course from './Course';
 import AddCourseCard from './AddCourseCard';
 
 const CourseList = () => {
-  const courses = useSelector(state => state.courses);
+  const courses = useSelector((state) => state.courses);
 
   const renderCourseList = () => {
     console.log(courses);
