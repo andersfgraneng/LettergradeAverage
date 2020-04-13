@@ -11,7 +11,7 @@ const Front = () => {
         </div>
       </div>
       <div className="ui text container">
-        <h1 className="ui inverted header">Grade calculator</h1>
+        <h1 className="ui inverted header">LettergradeAverage</h1>
         <h2>Fill in your grades to see your average</h2>
       </div>
     </div>

@@ -21,46 +21,51 @@ const AddCourseCard = (onClickHandler) => {
   };
 
   return (
-    <div className="ui card">
-      <div className="content">
-        Course name:
+    <tr>
+      <td>
         <div className="ui transparent input">
           <input
             type="text"
             value={newCourseName}
+            placeholder="Course name"
             onChange={(event) => {
               checkCourseName(event.target.value);
             }}
           />
         </div>
-        Grade:
+      </td>
+      <td>
         <div className="ui input">
           <input
             type="text"
             value={newGrade}
             maxLength="1"
+            size="1"
             onChange={(event) => {
               setNewGrade(event.target.value);
             }}
           />
         </div>
-      </div>
-      <button
-        className="ui primary bottom attached button"
-        disabled={disableButton}
-        onClick={() =>
-          dispatch(
-            addCourse({
-              courseName: newCourseName,
-              grade: newGrade,
-            })
-          )
-        }
-      >
-        <i className="add icon"></i>
-        Add course
-      </button>
-    </div>
+      </td>
+      <td>
+        <div className="ui right floated content">
+          <button
+            className="ui blue icon button"
+            disabled={disableButton}
+            onClick={() =>
+              dispatch(
+                addCourse({
+                  courseName: newCourseName,
+                  grade: newGrade,
+                })
+              )
+            }
+          >
+            <i className="add icon"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
   );
 };
 

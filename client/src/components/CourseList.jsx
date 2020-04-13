@@ -17,7 +17,17 @@ const CourseList = () => {
 
   return (
     <div className="eight wide column">
-      <div className="ui middle aligned divided list">{renderCourseList()}</div>
+      <table className="ui celled padded table">
+        <thead>
+          <tr>
+            <th className="single line">Course</th>
+            <th>Grade</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>{renderCourseList()}</tbody>
+        <tfoot></tfoot>
+      </table>
     </div>
   );
 };
