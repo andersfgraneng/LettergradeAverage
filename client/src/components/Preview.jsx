@@ -47,8 +47,17 @@ const Preview = () => {
 
   return (
     <div className="eight wide column">
-      <div>{printCourses()}</div>
-      <div>Average grade: {calculateAverage()}</div>
+      <div className="ui center aligned container">
+        <div className="ui card">
+          <div class="ui statistic">
+            <div class="value">
+              <i className="pencil alternate icon" />
+              {calculateAverage()}
+            </div>
+            <div class="label">Average grade</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
